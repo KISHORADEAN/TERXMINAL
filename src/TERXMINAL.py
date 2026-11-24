@@ -30,10 +30,13 @@ def main() -> int:
 
     while True:
         try:
-            user_input = input("you > ")
+            user_input = input("you > ").strip()
         except (EOFError, KeyboardInterrupt):
             print("\nTERXMINAL tidur... 🦖")
             return 0
+
+        if not user_input:
+            continue
 
         if user_input.lower() == "exit":
             print("TERXMINAL tidur... 🦖")
